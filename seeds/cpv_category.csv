@@ -4,4 +4,8 @@ cpv_code,cpv_label_en,category,include_flag,status
 33112000,Echo ultrasound and doppler imaging equipment,Imaging,1,V - checked 2026-10-21
 33113000,Magnetic resonance imaging equipment,Imaging,1,V - checked 2026-10-21
 33115000,Tomography devices,Imaging,1,V - checked 2026-10-21
+33121200,Scintigraphy devices,Imaging,1,V - checked 2026-10-21
+33123220,Cardio-angiography devices,Imaging,1,V - checked 2026-10-21
+33124120,Diagnostic ultrasound devices,Imaging,1,V - checked 2026-10-21
+33124200,Radiodiagnostic devices,Imaging,1,V - checked 2026-10-21
 33151000,Radiotherapy devices and supplies,Radiotherapy,1,V - checked 2026-10-21

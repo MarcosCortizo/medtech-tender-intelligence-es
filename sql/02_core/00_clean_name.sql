@@ -1,0 +1,12 @@
+CREATE OR ALTER FUNCTION dbo.clean_name (@name NVARCHAR(300))
+RETURNS NVARCHAR(300)
+AS
+BEGIN
+    DECLARE @s NVARCHAR(300) = TRANSLATE(UPPER(@name), N'ÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÂÊÎÔÛÃÕÑÇ', N'AEIOUAEIOUAEIOUAEIOUAONC');
+
+    SET @s = REPLACE(@s, N'.', N'');
+    SET @s = TRIM(REGEXP_REPLACE(@s, N'[^A-Z0-9]+', N' '));
+    SET @s = REGEXP_REPLACE(@s, N'( (SOCIEDAD|SOCIETAT|ANONIMA|LIMITADA|UNIPERSONAL|S ?A ?U|S ?L ?U|S ?L ?P|S ?A|S ?L|GMBH))+$', N'');
+
+    RETURN NULLIF(@s, N'');
+END;

@@ -13,3 +13,4 @@ data/raw/*
 # Power BI temp files
 *.pbix.bak
 .vscode/
+data/flat/

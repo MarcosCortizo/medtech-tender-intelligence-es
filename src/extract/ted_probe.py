@@ -1,5 +1,5 @@
 """
-ted_probe.py - Week 1 discovery script (run once, by hand).
+ted_probe.py - Step 1 discovery script (run once, by hand).
 
 What it does (no database needed, no API key needed):
   1. Counts Spanish notices for our CPV seed list in the last DAYS_BACK days.

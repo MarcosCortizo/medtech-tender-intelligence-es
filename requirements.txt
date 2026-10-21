@@ -1,6 +1,6 @@
-requests>=2.31     # week 1: call the TED API
-pandas>=2.2        # week 2: flatten JSON to tables
-pyodbc>=5.1        # week 2: load into Azure SQL (needs ODBC Driver 18)
-python-dotenv>=1.0 # week 2: read secrets from .env
-pyyaml>=6.0        # week 2: read config/settings.yaml
-pytest>=8.0        # week 2+: tests
+requests>=2.31     # step 1: call the TED API
+pandas>=2.2        # step 2: flatten JSON to tables
+pyodbc>=5.1        # step 2: load into Azure SQL (needs ODBC Driver 18)
+python-dotenv>=1.0 # step 2: read secrets from .env
+pyyaml>=6.0        # step 2: read config/settings.yaml
+pytest>=8.0        # step 2+: tests

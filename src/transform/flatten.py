@@ -1,6 +1,8 @@
 import csv
 import json
 import sys
+from datetime import date
+from decimal import Decimal
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -42,25 +44,25 @@ def clean_title(value):
 
 
 def clean_date(text):
-    return text[:10] if text else None
+    return date.fromisoformat(text[:10]) if text else None
 
 
 def clean_amount(text):
     if text is None:
         return None
-    amount = float(text)
+    amount = Decimal(text)
     return amount if amount > 0 else None
 
 
 def clean_int(text):
-    return int(float(text)) if text is not None else None
+    return int(Decimal(text)) if text is not None else None
 
 
-def per_lot(values, n_lots):
+def per_lot(values, n_lots, repeat=True):
     values = as_list(values)
     if len(values) == n_lots:
         return values
-    if len(set(values)) == 1:
+    if repeat and len(set(values)) == 1:
         return [values[0]] * n_lots
     return [None] * n_lots
 
@@ -91,15 +93,16 @@ def notice_row(n):
 def lot_rows(n):
     lot_ids = as_list(n.get("identifier-lot"))
     k = len(lot_ids)
-    estimated = per_lot(n.get("estimated-value-lot"), k)
-    awarded = per_lot(n.get("tender-value"), k)
-    winners = per_lot(pick_list(n.get("winner-name")), k)
+    estimated = per_lot(n.get("estimated-value-lot"), k, repeat=False)
+    awarded = per_lot(n.get("tender-value"), k, repeat=False)
+    winners = per_lot(pick_list(n.get("winner-name")), k, repeat=False)
     bids = per_lot(tenders_received(n.get("received-submissions-type-code"),
-                                    n.get("received-submissions-type-val")), k)
+                                    n.get("received-submissions-type-val")), k, repeat=False)
     deadlines = per_lot(n.get("deadline-receipt-tender-date-lot"), k)
     durations = per_lot(n.get("duration-period-value-lot"), k)
     units = per_lot(n.get("duration-period-unit-lot"), k)
     contracts = per_lot(n.get("contract-conclusion-date"), k)
+    currency = first(n.get("tender-value-cur")) or first(n.get("estimated-value-cur-lot"))
 
     rows = []
     for i, lot_id in enumerate(lot_ids):
@@ -108,6 +111,7 @@ def lot_rows(n):
             "lot_id": lot_id,
             "estimated_value": clean_amount(estimated[i]),
             "tender_value": clean_amount(awarded[i]),
+            "currency": currency,
             "winner_name": winners[i],
             "tenders_received": clean_int(bids[i]),
             "deadline_date": clean_date(deadlines[i]),

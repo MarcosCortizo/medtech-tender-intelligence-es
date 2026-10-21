@@ -1,12 +1,3 @@
-"""
-extract.py - step 2.1
-Downloads TED notices (Spain + our CPV list) for a date window
-and saves the raw answer as one JSON file in data/raw/.
-
-Run from the repo root:
-    python src/extract/extract.py                          # last 7 days
-    python src/extract/extract.py 2026-09-01 2026-09-30    # chosen window
-"""
 import csv
 import json
 import sys
@@ -21,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SEED_FILE = ROOT / "seeds" / "cpv_category.csv"
 RAW_DIR = ROOT / "data" / "raw"
 
-PAGE_SIZE = 250  # the most TED gives per page
+PAGE_SIZE = 250
 
 FIELDS = [
     "publication-number", "publication-date", "notice-type", "form-type",
@@ -47,7 +38,6 @@ def load_cpv_codes():
 
 
 def get_page(query, page):
-    """Ask TED for one page. Try up to 3 times before giving up."""
     body = {"query": query, "fields": FIELDS, "limit": PAGE_SIZE, "page": page,
             "scope": "ALL", "paginationMode": "PAGE_NUMBER"}
     for attempt in range(1, 4):
@@ -56,9 +46,9 @@ def get_page(query, page):
             if resp.status_code == 200:
                 return resp.json()
             print(f"  attempt {attempt}: HTTP {resp.status_code} {resp.text[:200]}")
-        except requests.RequestException as err:  # no internet, timeout...
+        except requests.RequestException as err:
             print(f"  attempt {attempt}: {err}")
-        time.sleep(10 * attempt)  # wait 10 s, then 20 s, then 30 s
+        time.sleep(10 * attempt)
     raise RuntimeError("TED API failed 3 times, stopping")
 
 
@@ -76,10 +66,10 @@ def extract(start, end):
         batch = data.get("notices", [])
         notices.extend(batch)
         print(f"  page {page}: {len(batch)} notices")
-        if len(batch) < PAGE_SIZE:  # a page that isn't full is the last one
+        if len(batch) < PAGE_SIZE:
             break
         page += 1
-        time.sleep(1.5)  # be polite to the API
+        time.sleep(1.5)
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     out_file = RAW_DIR / f"ted_{start}_{end}.json"

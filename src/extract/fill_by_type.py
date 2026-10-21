@@ -1,5 +1,3 @@
-
-
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 
@@ -7,13 +5,12 @@ from ted_probe import CANDIDATE_FIELDS, DAYS_BACK, OUT_DIR, is_empty, load_cpv_s
 
 
 def first(value):
-    """TED often returns lists. For grouping we only need the first item."""
     if isinstance(value, list):
         return value[0] if value else None
     return value
 
 
-def main() -> None:
+def main():
     since = (date.today() - timedelta(days=DAYS_BACK)).strftime("%Y%m%d")
     query = (f"buyer-country=ESP AND publication-date>={since} "
              f"AND classification-cpv IN ({' '.join(load_cpv_seed())})")
@@ -28,13 +25,11 @@ def main() -> None:
     notices = data.get("notices", [])
     print(f"Got {len(notices)} of {data.get('totalNoticeCount')} notices")
 
-    # group notices by form type
     groups = defaultdict(list)
     for nt in notices:
         groups[str(first(nt.get("form-type")))].append(nt)
     types = sorted(groups, key=lambda t: -len(groups[t]))
 
-    # which notice types sit inside each form type
     mix = Counter((str(first(nt.get("form-type"))), str(first(nt.get("notice-type"))))
                   for nt in notices)
 

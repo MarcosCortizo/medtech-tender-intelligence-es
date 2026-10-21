@@ -1,9 +1,8 @@
-# Field map (TED Search API v3 -> our model)
+# Field map (TED API -> our tables)
 
-Source: probe runs on 2026-10-21, 148 Spanish notices, last 90 days
-(`data/sample/probe_report.md`, `data/sample/fill_by_type.md`).
+Based on the step 1 checks on 2026-10-21: 148 Spanish notices from the last 90 days (`data/sample/probe_report.md`, `data/sample/fill_by_type.md`).
 
-Status: **V** checked with real data · **A** assumption, still to confirm · **X** not used
+Status: **V** checked with real data, **A** assumption, **X** not used.
 
 ## Notice types
 
@@ -14,29 +13,42 @@ Status: **V** checked with real data · **A** assumption, still to confirm · **
 | cont-modif | Change to a signed contract | Stored only (left out of awarded value to avoid double counting) |
 | planning | Early notice of a future purchase | Stored only (no procedure id) |
 
-## Fields
+## stg_notice
 
-| Question | Our column | TED field | Notice type | Fill | Status | Notes |
-|---|---|---|---|---|---|---|
-| Key | notice_id | publication-number | all | 100% | V | |
-| Key | procedure_id | procedure-identifier | all except planning | 100% | V | Links competition and result notices of the same tender |
-| Key | lot_id | identifier-lot | all | 100% (planning 73%) | V | |
-| All | form_type | form-type | all | 100% | V | |
-| All | notice_type | notice-type | all | 100% | V | |
-| All | publication_date | publication-date | all | 100% | V | |
-| All | cpv_code | classification-cpv | all | 100% | V | Parent code search includes children |
-| All | title | notice-title | all | 100% | V | |
-| Q1 Open lots | deadline | deadline-receipt-tender-date-lot | competition | 98% | V | |
-| Q1, Q4 | estimated_value_lot | estimated-value-lot | competition | 45% | V | |
-| Q1, Q4 | estimated_value_proc | estimated-value-proc | competition | 73% | A | Fallback when lot value is missing; only safe for single-lot tenders |
-| Q2 Buyers | buyer_name | buyer-name | all | 100% | V | Organisation only, no staff contact data |
-| Q2 Buyers | buyer_city | buyer-city | all | 100% | V | Region comes from a seed table |
-| Q3 Supplier share | supplier_name | winner-name | result | 96% | V | Cleaned with an alias table in step 3 |
-| Q3, Q4 | awarded_value | tender-value | result | 94% | V | Checked on notice 523461-2026; assumed excluding VAT |
-| Q3, Q4 | awarded_currency | tender-value-cur | result | 94% | V | |
-| Q4 Competition | tenders_received | received-submissions-type-val | result | 100% | V | Use only the value where type-code = "tenders" |
-| Q5 Re-tenders | duration_value | duration-period-value-lot | competition | 89% | V | Taken from the competition notice of the same procedure |
-| Q5 Re-tenders | duration_unit | duration-period-unit-lot | competition | 89% | V | |
-| Q5 Re-tenders | contract_signed_date | contract-conclusion-date | result | 96% | V | Start date for the re-tender estimate |
-| - | - | result-value-lot | result | 11% | X | Too sparse; tender-value used instead |
-| - | - | organisation-name-tenderer | result | 96% | X | All bidders, not only winners |
+| Column | TED field | Fill | Status | Notes |
+|---|---|---|---|---|
+| publication_number | publication-number | 100% | V | Key |
+| notice_id | notice-identifier | 100% | V | |
+| procedure_id | procedure-identifier | 100% (planning 0%) | V | Links competition and result notices of the same tender |
+| notice_type | notice-type | 100% | V | |
+| form_type | form-type | 100% | V | |
+| publication_date | publication-date | 100% | V | |
+| dispatch_date | dispatch-date | 100% | V | |
+| buyer_name | buyer-name | 100% | V | Organisation only, no staff contact data |
+| buyer_city | buyer-city | 100% | V | Region comes from a seed table |
+| title | notice-title | 100% | V | Spanish text, prefix removed |
+| cpv_codes | classification-cpv | 100% | V | All codes, comma separated. Parent code search includes children |
+| estimated_value_proc | estimated-value-proc | 73% (competition) | A | Fallback when the lot value is missing; only safe for single-lot tenders |
+| notice_url | built from publication-number | 100% | V | |
+
+## stg_lot
+
+| Column | TED field | Fill | Status | Notes |
+|---|---|---|---|---|
+| publication_number + lot_id | publication-number + identifier-lot | 100% (planning 73%) | V | Key |
+| estimated_value | estimated-value-lot | 45% (competition) | V | |
+| tender_value | tender-value | 94% (result) | V | Awarded value, checked on notice 523461-2026; assumed without VAT |
+| currency | tender-value-cur, else estimated-value-cur-lot | 94% (result) | V | |
+| winner_name | winner-name | 96% (result) | V | Name variants cleaned with an alias table in step 3 |
+| tenders_received | received-submissions-type-val | 100% (result) | V | Only the value where type-code = "tenders" |
+| deadline_date | deadline-receipt-tender-date-lot | 98% (competition) | V | |
+| duration_value | duration-period-value-lot | 89% (competition) | V | For the re-tender estimate |
+| duration_unit | duration-period-unit-lot | 89% (competition) | V | |
+| contract_date | contract-conclusion-date | 96% (result) | V | Start date for the re-tender estimate |
+
+## Not used
+
+| TED field | Fill | Why |
+|---|---|---|
+| result-value-lot | 11% (result) | Too sparse; tender-value used instead |
+| organisation-name-tenderer | 96% (result) | All bidders, not only winners |

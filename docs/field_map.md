@@ -25,7 +25,7 @@ Status: **V** checked with real data, **A** assumption, **X** not used.
 | publication_date | publication-date | 100% | V | |
 | dispatch_date | dispatch-date | 100% | V | |
 | buyer_name | buyer-name | 100% | V | Organisation only, no staff contact data |
-| buyer_city | buyer-city | 100% | V | Region comes from a seed table |
+| buyer_city | buyer-city | Most notices, some empty (e.g. Hospital Clínic) | V | Region comes from a seed table |
 | title | notice-title | 100% | V | Spanish text, prefix removed |
 | cpv_codes | classification-cpv | 100% | V | All codes, comma separated. Parent code search includes children |
 | estimated_value_proc | estimated-value-proc | 73% (competition) | A | Fallback when the lot value is missing; only safe for single-lot tenders |

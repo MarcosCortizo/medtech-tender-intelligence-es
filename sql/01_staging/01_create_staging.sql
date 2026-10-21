@@ -12,7 +12,7 @@ CREATE TABLE stg_notice (
     buyer_name           NVARCHAR(300),
     buyer_city           NVARCHAR(100),
     title                NVARCHAR(2000),
-    cpv_codes            VARCHAR(500),
+    cpv_codes            VARCHAR(MAX),
     estimated_value_proc DECIMAL(18,2),
     notice_url           VARCHAR(200),
     loaded_at            DATETIME2      NOT NULL DEFAULT SYSUTCDATETIME()

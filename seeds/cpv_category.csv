@@ -1,9 +1,7 @@
 cpv_code,cpv_label_en,category,include_flag,status
-33110000,Imaging equipment for medical dental and veterinary use,Imaging,1,A - verify label
-33111000,X-ray devices,Imaging,1,A - verify label
-33112000,Echo ultrasound and doppler imaging equipment,Imaging,1,A - verify label
-33113000,Magnetic resonance imaging equipment,Imaging,1,A - verify label
-33115000,Tomography devices,Imaging,1,A - verify label
-33124000,Diagnostics and radiodiagnostic devices and supplies,Imaging,1,A - verify label
-33150000,Radiotherapy mechanotherapy electrotherapy and physical therapy devices,Radiotherapy,1,A - verify label
-33151000,Radiotherapy devices and supplies,Radiotherapy,1,A - verify label
+33110000,Imaging equipment for medical dental and veterinary use,Imaging,1,V - checked 2026-10-21
+33111000,X-ray devices,Imaging,1,V - checked 2026-10-21
+33112000,Echo ultrasound and doppler imaging equipment,Imaging,1,V - checked 2026-10-21
+33113000,Magnetic resonance imaging equipment,Imaging,1,V - checked 2026-10-21
+33115000,Tomography devices,Imaging,1,V - checked 2026-10-21
+33151000,Radiotherapy devices and supplies,Radiotherapy,1,V - checked 2026-10-21

@@ -45,4 +45,6 @@ Notices: 148 (last 90 days)
 | `received-submissions-type-code` | 0% | 100% | 0% | 0% |
 | `duration-period-value-lot` | 89% | 20% | 24% | 64% |
 | `duration-period-unit-lot` | 89% | 20% | 24% | 64% |
+| `winner-decision-date` | 0% | 72% | 71% | 0% |
+| `contract-conclusion-date` | 0% | 96% | 100% | 0% |
 | `links` | 100% | 100% | 100% | 100% |

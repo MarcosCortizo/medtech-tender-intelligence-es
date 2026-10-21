@@ -45,4 +45,7 @@ Sample: 100 notices
 | `received-submissions-type-code` | VALID | 29% |
 | `duration-period-value-lot` | VALID | 55% |
 | `duration-period-unit-lot` | VALID | 55% |
+| `winner-decision-date` | VALID | 31% |
+| `contract-conclusion-date` | VALID | 43% |
 | `links` | VALID | 100% |
+| `award-date` | INVALID | - |

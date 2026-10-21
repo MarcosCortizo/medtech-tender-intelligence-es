@@ -650,6 +650,9 @@
     "notice-identifier": "e3559c31-9c65-4968-b1e6-c5146c97df75",
     "notice-type": "can-modif",
     "publication-number": "515221-2026",
+    "contract-conclusion-date": [
+      "2024-05-09+02:00"
+    ],
     "dispatch-date": "2026-07-23+02:00",
     "procedure-identifier": "af90ae0d-8c43-4eaf-8659-b7908295e9d1",
     "buyer-country": [
@@ -671,6 +674,9 @@
         "Gerencia Sector Sanitario de Zaragoza 2"
       ]
     },
+    "winner-decision-date": [
+      "2024-04-12+02:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "MERCÉ V. ELECTROMEDICINA, S.L."
@@ -802,6 +808,9 @@
     "notice-identifier": "7075062f-d508-4a66-916e-b99f4266adc1",
     "notice-type": "can-modif",
     "publication-number": "515520-2026",
+    "contract-conclusion-date": [
+      "2024-05-09+02:00"
+    ],
     "dispatch-date": "2026-07-23+02:00",
     "procedure-identifier": "af90ae0d-8c43-4eaf-8659-b7908295e9d1",
     "buyer-country": [
@@ -823,6 +832,9 @@
         "Gerencia Sector Sanitario de Zaragoza 2"
       ]
     },
+    "winner-decision-date": [
+      "2024-04-12+02:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "MERCÉ V. ELECTROMEDICINA, S.L."
@@ -954,6 +966,9 @@
     "notice-identifier": "5527464c-8d3c-47c0-9af5-75615a2d7cdb",
     "notice-type": "can-modif",
     "publication-number": "515717-2026",
+    "contract-conclusion-date": [
+      "2022-08-04+01:00"
+    ],
     "dispatch-date": "2026-07-24Z",
     "procedure-identifier": "cd93461d-c8a1-49fc-9d98-93ac0de53056",
     "buyer-country": [
@@ -1887,6 +1902,9 @@
     "notice-identifier": "b7978163-5b67-4932-ae96-47d5f4e01b13",
     "notice-type": "can-standard",
     "publication-number": "523461-2026",
+    "contract-conclusion-date": [
+      "2026-07-27+02:00"
+    ],
     "winner-country": [
       "ESP"
     ],
@@ -1921,6 +1939,9 @@
         "Secretaría General de la Agencia Estatal Consejo Superior de Investigaciones Científicas"
       ]
     },
+    "winner-decision-date": [
+      "2026-06-30+02:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "Thermo Fisher Scientific SLU"
@@ -2215,6 +2236,9 @@
     "notice-identifier": "1696e87c-9d87-4ee4-9b67-3aa20f5b5e41",
     "notice-type": "can-modif",
     "publication-number": "524794-2026",
+    "contract-conclusion-date": [
+      "2022-08-29+02:00"
+    ],
     "duration-period-value-lot": [
       "4"
     ],
@@ -2376,6 +2400,21 @@
   {
     "notice-type": "can-standard",
     "publication-number": "530527-2026",
+    "contract-conclusion-date": [
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00",
+      "2026-07-23+02:00"
+    ],
     "winner-country": [
       "ESP",
       "ESP",
@@ -2461,6 +2500,21 @@
       "t-esubm"
     ],
     "estimated-value-proc": "2552127.01",
+    "winner-decision-date": [
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00",
+      "2026-06-22+02:00"
+    ],
     "links": {
       "xml": {
         "MUL": "https://ted.europa.eu/en/notice/530527-2026/xml"
@@ -2835,6 +2889,9 @@
     "notice-identifier": "bbcc6f52-44d4-447e-8482-d5175158603d",
     "notice-type": "can-modif",
     "publication-number": "530998-2026",
+    "contract-conclusion-date": [
+      "2024-01-08+01:00"
+    ],
     "dispatch-date": "2026-07-30+02:00",
     "procedure-identifier": "84e409c7-af43-43db-947f-0fa2ebdd1116",
     "buyer-country": [
@@ -2856,6 +2913,9 @@
         "Gerencia Sector Sanitario de Zaragoza 2"
       ]
     },
+    "winner-decision-date": [
+      "2023-12-11+01:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "TERUMO EUROPE ESPAÑA SL"
@@ -2987,6 +3047,9 @@
     "notice-identifier": "7c88aeac-0c66-4085-a639-b009c2732a4c",
     "notice-type": "can-modif",
     "publication-number": "531584-2026",
+    "contract-conclusion-date": [
+      "2024-01-23+01:00"
+    ],
     "dispatch-date": "2026-07-30+02:00",
     "procedure-identifier": "b998d48a-1ec3-43b1-8a2b-4aab17cd7726",
     "buyer-country": [
@@ -3008,6 +3071,9 @@
         "Gerencia Sector Sanitario de Zaragoza 2"
       ]
     },
+    "winner-decision-date": [
+      "2023-12-28+01:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "MERIT MEDICAL SPAIN SL"
@@ -3297,6 +3363,9 @@
     "notice-identifier": "58ddaec3-c637-41d8-8570-77a8521df4ea",
     "notice-type": "can-modif",
     "publication-number": "532417-2026",
+    "contract-conclusion-date": [
+      "2024-01-08+01:00"
+    ],
     "dispatch-date": "2026-07-30+02:00",
     "procedure-identifier": "84e409c7-af43-43db-947f-0fa2ebdd1116",
     "buyer-country": [
@@ -3318,6 +3387,9 @@
         "Gerencia Sector Sanitario de Zaragoza 2"
       ]
     },
+    "winner-decision-date": [
+      "2023-12-11+01:00"
+    ],
     "organisation-name-tenderer": {
       "spa": [
         "PHILIPS IBÉRICA SAU"

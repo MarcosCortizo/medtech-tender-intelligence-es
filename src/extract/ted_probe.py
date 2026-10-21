@@ -58,6 +58,7 @@ CANDIDATE_FIELDS = [
     "received-submissions-type-val", "received-submissions-type-code",
     # contract duration (re-tender KPI)
     "duration-period-value-lot", "duration-period-unit-lot",
+            "winner-decision-date", "contract-conclusion-date",
     # link to the notice page
     "links",
 ]

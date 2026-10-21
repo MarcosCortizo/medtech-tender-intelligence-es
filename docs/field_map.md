@@ -32,10 +32,11 @@ Status: **V** checked with real data · **A** assumption, still to confirm · **
 | Q2 Buyers | buyer_name | buyer-name | all | 100% | V | Organisation only, no staff contact data |
 | Q2 Buyers | buyer_city | buyer-city | all | 100% | V | Region comes from a seed table |
 | Q3 Supplier share | supplier_name | winner-name | result | 96% | V | Cleaned with an alias table in step 3 |
-| Q3, Q4 | awarded_value | tender-value | result | 94% | A | Looks like the award amount; confirm currency and VAT (O10) |
+| Q3, Q4 | awarded_value | tender-value | result | 94% | V | Checked on notice 523461-2026; assumed excluding VAT |
 | Q3, Q4 | awarded_currency | tender-value-cur | result | 94% | V | |
-| Q4 Competition | tenders_received | received-submissions-type-val | result | 100% | V | |
+| Q4 Competition | tenders_received | received-submissions-type-val | result | 100% | V | Use only the value where type-code = "tenders" |
 | Q5 Re-tenders | duration_value | duration-period-value-lot | competition | 89% | V | Taken from the competition notice of the same procedure |
 | Q5 Re-tenders | duration_unit | duration-period-unit-lot | competition | 89% | V | |
+| Q5 Re-tenders | contract_signed_date | contract-conclusion-date | result | 96% | V | Start date for the re-tender estimate |
 | - | - | result-value-lot | result | 11% | X | Too sparse; tender-value used instead |
 | - | - | organisation-name-tenderer | result | 96% | X | All bidders, not only winners |

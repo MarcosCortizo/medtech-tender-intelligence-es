@@ -17,11 +17,6 @@ table etl_run_log
 		summarizeBy: none
 		sourceColumn: started_at
 
-		variation Variation
-			isDefault
-			relationship: 03539ffc-3b24-4910-8c31-8fb475bac202
-			defaultHierarchy: LocalDateTable_f4490ecd-ef81-4244-a681-f1bfb0dac08e.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column finished_at
@@ -30,11 +25,6 @@ table etl_run_log
 		lineageTag: f9aa4f5e-e307-4143-90b1-a8f28a487ab2
 		summarizeBy: none
 		sourceColumn: finished_at
-
-		variation Variation
-			isDefault
-			relationship: cce09b5c-0d46-4ce3-b022-efd06e75aba6
-			defaultHierarchy: LocalDateTable_63ad7bc7-fe9b-4d49-88a0-91605c264190.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

@@ -135,11 +135,6 @@ table v_lot_latest
 		summarizeBy: none
 		sourceColumn: deadline_date
 
-		variation Variation
-			isDefault
-			relationship: 8cec17dc-9a62-4e9d-8ef7-1bdb98765a33
-			defaultHierarchy: LocalDateTable_7352b890-81a0-4057-99e4-347aa9b792ef.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -195,11 +190,6 @@ table v_lot_latest
 		lineageTag: 7f5f0e58-f0ea-4f12-8ede-628c77667024
 		summarizeBy: none
 		sourceColumn: contract_date
-
-		variation Variation
-			isDefault
-			relationship: eaf8445e-6572-4286-9495-ca720c67fa28
-			defaultHierarchy: LocalDateTable_60323420-7f6a-4f28-b67b-2ae5579d14b2.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

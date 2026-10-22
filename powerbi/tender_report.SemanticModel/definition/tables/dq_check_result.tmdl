@@ -8,11 +8,6 @@ table dq_check_result
 		summarizeBy: none
 		sourceColumn: checked_at
 
-		variation Variation
-			isDefault
-			relationship: 2037e4a8-dc0f-4cf5-b43f-4c20b09d22c4
-			defaultHierarchy: LocalDateTable_ffd7cb95-b679-421a-8fe1-2271ce298bd3.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column check_name

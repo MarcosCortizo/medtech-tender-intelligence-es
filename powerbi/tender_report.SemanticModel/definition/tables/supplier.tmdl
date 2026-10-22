@@ -1,0 +1,40 @@
+table supplier
+	lineageTag: 73fba852-a35c-4610-83a0-a5ff3ef5e3ae
+
+	column supplier_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c80066d9-f9e4-4f1f-bbf6-b3a3905d2c60
+		summarizeBy: none
+		sourceColumn: supplier_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_key
+		dataType: string
+		lineageTag: 49fb90b8-b6a0-4965-b51b-1c70b240a4d9
+		summarizeBy: none
+		sourceColumn: supplier_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_name
+		dataType: string
+		lineageTag: ef9d8791-1a1d-4bdc-b698-f940d04a5d0d
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition supplier = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("tender-marcos-se.database.windows.net"),
+				    tenderdb = Source{[Name="tenderdb"]}[Data],
+				    dbo_supplier = tenderdb{[Schema="dbo",Item="supplier"]}[Data]
+				in
+				    dbo_supplier
+
+	annotation PBI_ResultType = Table
+

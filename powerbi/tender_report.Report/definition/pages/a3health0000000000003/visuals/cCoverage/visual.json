@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "cCoverage",
+  "position": {
+    "x": 929.07240493392567,
+    "y": 91.8607258945934,
+    "z": 3000,
+    "height": 100,
+    "width": 296,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Supplier Coverage %"
+                }
+              },
+              "queryRef": "v_lot_latest.Supplier Coverage %",
+              "nativeQueryRef": "Supplier Coverage %"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Awarded lots with a known winner'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "cLastRun",
+  "position": {
+    "x": 82.558373905267487,
+    "y": 91.8607258945934,
+    "z": 1000,
+    "height": 100.00028388525358,
+    "width": 303.48923365175796,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Last Run"
+                }
+              },
+              "queryRef": "v_lot_latest.Last Run",
+              "nativeQueryRef": "Last Run"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Last pipeline run (UTC)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

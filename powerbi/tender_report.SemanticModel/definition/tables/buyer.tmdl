@@ -1,0 +1,48 @@
+table buyer
+	lineageTag: 1826bbf0-e53a-450a-a780-3866c6a68c6d
+
+	column buyer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e9d58f8-179d-413f-9490-969744a45c3a
+		summarizeBy: none
+		sourceColumn: buyer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_key
+		dataType: string
+		lineageTag: f5c7b6cf-37e7-46ed-9811-3bc3e0a23815
+		summarizeBy: none
+		sourceColumn: buyer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_name
+		dataType: string
+		lineageTag: 78f53cd9-5e62-452e-b7ec-1ce9bd2992ee
+		summarizeBy: none
+		sourceColumn: buyer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_city
+		dataType: string
+		lineageTag: 5a0c893f-28f9-4938-801a-768211c6e94e
+		summarizeBy: none
+		sourceColumn: buyer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	partition buyer = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("tender-marcos-se.database.windows.net"),
+				    tenderdb = Source{[Name="tenderdb"]}[Data],
+				    dbo_buyer = tenderdb{[Schema="dbo",Item="buyer"]}[Data]
+				in
+				    dbo_buyer
+
+	annotation PBI_ResultType = Table
+

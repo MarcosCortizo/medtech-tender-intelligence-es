@@ -10,3 +10,5 @@ data/raw/*
 data/flat/
 
 *.pbix.bak
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

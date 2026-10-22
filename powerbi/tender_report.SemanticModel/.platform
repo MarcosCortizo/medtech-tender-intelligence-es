@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "tender_report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fe267673-4831-4cc2-b507-be674b39879e"
+  }
+}

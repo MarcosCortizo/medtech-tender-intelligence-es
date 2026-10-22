@@ -1,0 +1,259 @@
+table v_lot_latest
+	lineageTag: cb48fb49-88ee-4283-bb6d-ba7ea07e3c45
+
+	measure Lots = COUNTROWS ( v_lot_latest )
+		formatString: 0
+		lineageTag: 58953604-aaa2-4902-bc4d-1274dd984754
+
+	measure 'Awarded Value' = SUM ( v_lot_latest[awarded_value] )
+		formatString: #,0
+		lineageTag: 931f13f3-d2ac-4eee-8764-1ef0f5f3ef0a
+
+	measure 'Supplier Share %' = DIVIDE ( [Awarded Value], CALCULATE ( [Awarded Value], ALL ( supplier ), NOT ISBLANK ( v_lot_latest[supplier_id] ) ) )
+		formatString: 0.0%
+		lineageTag: 6861f2e7-4087-450d-bf82-38ff1ed0137f
+
+	measure 'Open Lots 30d' = CALCULATE ( [Lots], v_lot_latest[status] = "open", v_lot_latest[deadline_date] <= TODAY () + 30 )
+		formatString: 0
+		lineageTag: 8f0a928e-3a08-47bd-b641-66baba9a9abe
+
+	measure 'Open Estimated Value' = CALCULATE ( SUM ( v_lot_latest[estimated_value] ), v_lot_latest[status] = "open" )
+		formatString: #,0
+		lineageTag: 249249a3-8e4b-479f-a952-559dad44ef95
+
+	measure 'Award to Estimate' = MEDIANX ( FILTER ( v_lot_latest, v_lot_latest[awarded_value] > 0 && v_lot_latest[estimated_value] > 0 ), v_lot_latest[awarded_value] / v_lot_latest[estimated_value] )
+		formatString: 0.00
+		lineageTag: e43c9b22-4247-4664-9b3c-8524048df367
+
+	measure 'Avg Bids' = AVERAGE ( v_lot_latest[tenders_received] )
+		formatString: 0.0
+		lineageTag: 04022460-9272-44bf-b727-f532a5de76ba
+
+	measure 'Estimated Value' = SUM ( v_lot_latest[estimated_value] )
+		formatString: #,0
+		lineageTag: 1ffbff7a-ab28-4a5c-80f3-7421bcff8af8
+
+	measure 'Awarded Lots' = CALCULATE ( [Lots], v_lot_latest[status] = "result" )
+		formatString: 0
+		lineageTag: bbee03a5-190a-4100-bb55-c219fb4073e5
+
+	measure 'Closed No Result' = CALCULATE ( [Lots], v_lot_latest[status] = "closed, no result yet" )
+		formatString: 0
+		lineageTag: e037473f-1e5e-431a-a410-3bbd58424f29
+
+	measure 'Next Deadline' = CALCULATE ( MIN ( v_lot_latest[deadline_date] ), v_lot_latest[status] = "open" )
+		formatString: dd mmm yyyy
+		lineageTag: df93914a-901e-45b7-90de-45b980948c74
+
+	measure 'Days Left' = DATEDIFF ( TODAY (), MAX ( v_lot_latest[deadline_date] ), DAY )
+		formatString: 0
+		lineageTag: 06ec32c6-5ac7-408b-830c-effdf12dce8d
+
+	measure 'Re-tenders 12m' = CALCULATE ( [Lots], v_lot_latest[Contract End] >= TODAY (), v_lot_latest[Contract End] <= TODAY () + 365 )
+		formatString: 0
+		lineageTag: bd9924c6-6508-4f03-bdb6-e51b3d77a704
+
+	measure 'Supplier Coverage %' = DIVIDE ( CALCULATE ( [Lots], v_lot_latest[status] = "result", NOT ISBLANK ( v_lot_latest[supplier_id] ) ), [Awarded Lots] )
+		formatString: 0.0%
+		lineageTag: 9b032178-a8a1-45af-8b6b-0653f27908c1
+
+	measure 'Value Without Supplier' = CALCULATE ( [Awarded Value], ISBLANK ( v_lot_latest[supplier_id] ) )
+		formatString: #,0
+		lineageTag: d07a7867-a7f4-4af8-8a35-1fe0a37c1870
+
+	measure 'Last Run' = MAX ( etl_run_log[started_at] )
+		formatString: dd/mm/yyyy hh:nn
+		lineageTag: e82fe5c9-4b61-44d8-9051-aa7cdd3bf7eb
+
+	measure 'Runs OK' = CALCULATE ( COUNTROWS ( etl_run_log ), etl_run_log[status] = "OK" )
+		formatString: 0
+		lineageTag: 2d6191f0-0a4f-46f7-bf6e-9e7100a9f420
+
+	column procedure_id
+		dataType: string
+		lineageTag: 8e9b2f98-0975-4264-be80-f612dbc0a7de
+		summarizeBy: none
+		sourceColumn: procedure_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column lot_id
+		dataType: string
+		lineageTag: 61f739f1-357f-43de-9735-4b0a5508f5bd
+		summarizeBy: none
+		sourceColumn: lot_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column buyer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c62a0486-4d3f-422d-932a-1ce96af90203
+		summarizeBy: none
+		sourceColumn: buyer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column competition_notice
+		dataType: string
+		lineageTag: 3d53ab88-b1be-4cd6-af4d-7d0c84d9130b
+		summarizeBy: none
+		sourceColumn: competition_notice
+
+		annotation SummarizationSetBy = Automatic
+
+	column result_notice
+		dataType: string
+		lineageTag: fded5c96-dbc8-4241-88b2-9490ee27a100
+		summarizeBy: none
+		sourceColumn: result_notice
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: f5f43b13-7297-4971-9e83-96426938a93e
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_value
+		dataType: double
+		lineageTag: bf37572f-f765-4c6e-a641-5d1ef8e21261
+		summarizeBy: sum
+		sourceColumn: estimated_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column deadline_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aa464779-6827-46c8-8940-66ec1183c586
+		summarizeBy: none
+		sourceColumn: deadline_date
+
+		variation Variation
+			isDefault
+			relationship: 8cec17dc-9a62-4e9d-8ef7-1bdb98765a33
+			defaultHierarchy: LocalDateTable_7352b890-81a0-4057-99e4-347aa9b792ef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column duration_value
+		dataType: int64
+		formatString: 0
+		lineageTag: 89c5e4d5-46ae-4b7e-9a8a-fc31013e4786
+		summarizeBy: sum
+		sourceColumn: duration_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_unit
+		dataType: string
+		lineageTag: 7eabb7c4-1334-488a-aa41-a5c0844c799f
+		summarizeBy: none
+		sourceColumn: duration_unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d8420bc-55bf-4860-950c-775326c28a74
+		summarizeBy: none
+		sourceColumn: supplier_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column awarded_value
+		dataType: double
+		lineageTag: 43598949-8f58-4ddc-8392-b10d2c28f5ea
+		summarizeBy: sum
+		sourceColumn: awarded_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tenders_received
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b10ba9f-5eea-44fd-9156-872602549f8a
+		summarizeBy: sum
+		sourceColumn: tenders_received
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7f5f0e58-f0ea-4f12-8ede-628c77667024
+		summarizeBy: none
+		sourceColumn: contract_date
+
+		variation Variation
+			isDefault
+			relationship: eaf8445e-6572-4286-9495-ca720c67fa28
+			defaultHierarchy: LocalDateTable_60323420-7f6a-4f28-b67b-2ae5579d14b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column title
+		dataType: string
+		lineageTag: 0c3e96a3-25ad-4817-b2b1-c958b521e840
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column notice_url
+		dataType: string
+		lineageTag: c8437af7-d55f-4e3a-b7a0-adf2c9c70f4e
+		summarizeBy: none
+		sourceColumn: notice_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 0e7e6f22-f2fd-4b07-86ec-f902a0dd856d
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column publication_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2998893d-8735-46ea-8147-b87819b0e285
+		summarizeBy: none
+		sourceColumn: publication_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Contract End' = VAR s = IF ( v_lot_latest[status] = "result", COALESCE ( v_lot_latest[contract_date], v_lot_latest[publication_date] ) ) VAR n = v_lot_latest[duration_value] RETURN IF ( NOT ISBLANK ( s ) && NOT ISBLANK ( n ), SWITCH ( v_lot_latest[duration_unit], "MONTH", EDATE ( s, n ), "YEAR", EDATE ( s, 12 * n ), "DAY", s + n ) )
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 18a3680f-11b9-4425-95ad-13dfa04b0002
+		summarizeBy: none
+
+	partition v_lot_latest = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("tender-marcos-se.database.windows.net", "tenderdb"),
+				    dbo_v_lot_latest = Source{[Schema="dbo",Item="v_lot_latest"]}[Data]
+				in
+				    dbo_v_lot_latest
+
+	annotation PBI_ResultType = Table
+

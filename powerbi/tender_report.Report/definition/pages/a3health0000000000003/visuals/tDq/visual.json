@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "tDq",
+  "position": {
+    "x": 648,
+    "y": 208,
+    "z": 6000,
+    "height": 488,
+    "width": 608,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_check_result"
+                    }
+                  },
+                  "Property": "checked_at"
+                }
+              },
+              "queryRef": "dq_check_result.checked_at",
+              "nativeQueryRef": "checked_at"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_check_result"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "dq_check_result.check_name",
+              "nativeQueryRef": "check_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dq_check_result"
+                    }
+                  },
+                  "Property": "bad_rows"
+                }
+              },
+              "queryRef": "dq_check_result.bad_rows",
+              "nativeQueryRef": "bad_rows"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dq_check_result"
+                  }
+                },
+                "Property": "checked_at"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data quality checks (0 = pass for lost rows)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

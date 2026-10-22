@@ -1,0 +1,30 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["v_lot_latest","buyer","supplier","etl_run_log","dq_check_result"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table v_lot_latest
+ref table DateTableTemplate_62010cd1-63fd-4350-9506-9b1388e73086
+ref table LocalDateTable_7352b890-81a0-4057-99e4-347aa9b792ef
+ref table LocalDateTable_60323420-7f6a-4f28-b67b-2ae5579d14b2
+ref table buyer
+ref table supplier
+ref table etl_run_log
+ref table LocalDateTable_f4490ecd-ef81-4244-a681-f1bfb0dac08e
+ref table LocalDateTable_63ad7bc7-fe9b-4d49-88a0-91605c264190
+ref table dq_check_result
+ref table LocalDateTable_ffd7cb95-b679-421a-8fe1-2271ce298bd3
+ref table Date
+
+ref cultureInfo en-US
+

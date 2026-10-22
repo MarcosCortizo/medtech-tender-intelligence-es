@@ -1,0 +1,312 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "tComp",
+  "position": {
+    "x": 560.46670735688633,
+    "y": 151.16321982654611,
+    "z": 3000,
+    "height": 545.35038537423168,
+    "width": 695.350811202112,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "supplier"
+                    }
+                  },
+                  "Property": "supplier_name"
+                }
+              },
+              "queryRef": "supplier.supplier_name",
+              "nativeQueryRef": "supplier_name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Awarded Lots"
+                }
+              },
+              "queryRef": "v_lot_latest.Awarded Lots",
+              "nativeQueryRef": "Awarded Lots"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Awarded Value"
+                }
+              },
+              "queryRef": "v_lot_latest.Awarded Value",
+              "nativeQueryRef": "Awarded Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Supplier Share %"
+                }
+              },
+              "queryRef": "v_lot_latest.Supplier Share %",
+              "nativeQueryRef": "Supplier Share %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Avg Bids"
+                }
+              },
+              "queryRef": "v_lot_latest.Avg Bids",
+              "nativeQueryRef": "Avg Bids"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "v_lot_latest"
+                    }
+                  },
+                  "Property": "Award to Estimate"
+                }
+              },
+              "queryRef": "v_lot_latest.Award to Estimate",
+              "nativeQueryRef": "Award to Estimate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "v_lot_latest"
+                  }
+                },
+                "Property": "Awarded Value"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Supplier scorecard'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fSupplier",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "supplier"
+              }
+            },
+            "Property": "supplier_name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "x",
+              "Entity": "supplier",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "x"
+                              }
+                            },
+                            "Property": "supplier_name"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "b6dc549587a5da07dce1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_lot_latest"
+              }
+            },
+            "Property": "Awarded Lots"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e7c622ce33e43a6544ec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_lot_latest"
+              }
+            },
+            "Property": "Awarded Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b00a04a6f06f0dfc33f5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_lot_latest"
+              }
+            },
+            "Property": "Supplier Share %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cc568efae06b60c00c2f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_lot_latest"
+              }
+            },
+            "Property": "Avg Bids"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e50c97e9f22d2348c5e3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "v_lot_latest"
+              }
+            },
+            "Property": "Award to Estimate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

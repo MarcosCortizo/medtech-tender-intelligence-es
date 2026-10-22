@@ -1,5 +1,5 @@
 import sys
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 SRC = Path(__file__).resolve().parent
@@ -15,6 +15,10 @@ from load_staging import count, load
 LOAD_SQL = ROOT / "sql" / "03_load"
 DQ_SQL = ROOT / "sql" / "04_dq" / "01_dq_checks.sql"
 WINDOW_DAYS = 14
+
+
+def utc_now():
+    return datetime.now(timezone.utc).replace(tzinfo=None)
 
 
 def run_sql_files():
@@ -39,13 +43,13 @@ def write_log(started, status, new_notices, new_lots, error):
         conn.execute(
             "INSERT INTO etl_run_log (started_at, finished_at, status, new_notices, new_lots, error_message) "
             "VALUES (?, ?, ?, ?, ?, ?)",
-            started, datetime.now(), status, new_notices, new_lots, error,
+            started, utc_now(), status, new_notices, new_lots, error,
         )
         conn.commit()
 
 
 def main():
-    started = datetime.now()
+    started = utc_now()
     end = date.today()
     start = end - timedelta(days=WINDOW_DAYS)
     notices_before, lots_before = table_counts()

@@ -1,4 +1,6 @@
 import os
+import time
+
 import pyodbc
 from dotenv import load_dotenv
 
@@ -14,7 +16,14 @@ def connect():
         f"PWD={os.environ['SQL_PASSWORD']};"
         "Encrypt=yes;TrustServerCertificate=no;Connection Timeout=60;"
     )
-    return pyodbc.connect(conn_str)
+    for attempt in range(1, 4):
+        try:
+            return pyodbc.connect(conn_str)
+        except pyodbc.OperationalError as err:
+            if attempt == 3:
+                raise
+            print(f"connection attempt {attempt} failed, database may be waking up: {err}")
+            time.sleep(30)
 
 
 if __name__ == "__main__":

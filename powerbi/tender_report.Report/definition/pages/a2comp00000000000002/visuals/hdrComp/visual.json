@@ -22,15 +22,9 @@
                     "value": "COMPETITORS & PRICING",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "28pt",
+                      "color": "#1F2A44"
                     }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
                   }
                 ]
               }

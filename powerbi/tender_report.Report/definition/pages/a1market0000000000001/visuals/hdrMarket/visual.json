@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "hdrMarket",
   "position": {
-    "x": 24,
-    "y": 14,
+    "x": 24.418673971980525,
+    "y": 13.95352798398887,
     "z": 0,
-    "height": 62,
-    "width": 880,
+    "height": 63.95366992661566,
+    "width": 879.07226299129889,
     "tabOrder": 0
   },
   "visual": {
@@ -23,15 +23,8 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "28pt",
-                      "color": "#1f2a44"
+                      "color": "#1F2A44"
                     }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
                   }
                 ]
               }

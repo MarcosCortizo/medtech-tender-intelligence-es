@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "tOpen",
   "position": {
-    "x": 23.327693931221631,
-    "y": 208.57702809092279,
+    "x": 23.255879973314784,
+    "y": 208.14012576116733,
     "z": 6000,
-    "height": 422.64292534213308,
-    "width": 1232.2511264845309,
+    "height": 495.35024343160489,
+    "width": 1232.5616385856836,
     "tabOrder": 6000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "v_lot_latest.deadline_date",
-              "nativeQueryRef": "deadline_date"
+              "nativeQueryRef": "deadline_date",
+              "displayName": "Deadline"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Days Left",
-              "nativeQueryRef": "Days Left"
+              "nativeQueryRef": "Days Left",
+              "displayName": "Days left"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "buyer.buyer_name",
-              "nativeQueryRef": "buyer_name"
+              "nativeQueryRef": "buyer_name",
+              "displayName": "Buyer"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "v_lot_latest.title",
-              "nativeQueryRef": "title"
+              "nativeQueryRef": "title",
+              "displayName": "Tender"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "v_lot_latest.category",
-              "nativeQueryRef": "category"
+              "nativeQueryRef": "category",
+              "displayName": "Category"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Estimated Value",
-              "nativeQueryRef": "Estimated Value"
+              "nativeQueryRef": "Estimated Value",
+              "displayName": "Estimate (EUR)"
             },
             {
               "field": {
@@ -111,7 +117,8 @@
                 }
               },
               "queryRef": "v_lot_latest.notice_url",
-              "nativeQueryRef": "notice_url"
+              "nativeQueryRef": "notice_url",
+              "displayName": "TED link"
             }
           ]
         }
@@ -123,10 +130,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "buyer"
+                    "Entity": "v_lot_latest"
                   }
                 },
-                "Property": "buyer_name"
+                "Property": "deadline_date"
               }
             },
             "direction": "Ascending"
@@ -166,6 +173,83 @@
               }
             }
           }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "458.55379047686097D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "v_lot_latest.title"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "235.89353624297917D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "buyer.buyer_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.83151344858695D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "v_lot_latest.Estimated Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.44191365165076D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "v_lot_latest.category"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "182.18603033589343D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "v_lot_latest.deadline_date"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
         }
       ]
     },

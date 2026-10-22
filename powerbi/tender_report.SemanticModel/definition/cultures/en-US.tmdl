@@ -1,2 +1,431 @@
 cultureInfo en-US
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "v_lot_latest.deadline_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "deadline_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deadline": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.days_left": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Days Left"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Days left": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tender": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.estimated_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Estimated Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Estimate (EUR)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.notice_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "notice_url"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TED link": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.supplier_share_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Supplier Share %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.awarded_lots": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Awarded Lots"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lots won": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.awarded_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Awarded Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Awarded (EUR)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.avg_bids": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Avg Bids"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg bids": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_lot_latest.award_to_estimate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "v_lot_latest",
+			          "ConceptualProperty": "Award to Estimate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Award / estimate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "buyer.buyer_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "buyer",
+			          "ConceptualProperty": "buyer_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Buyer": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "supplier.supplier_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "supplier",
+			          "ConceptualProperty": "supplier_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Supplier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_check_result.checked_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_check_result",
+			          "ConceptualProperty": "checked_at"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Checked (UTC)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_check_result.check_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_check_result",
+			          "ConceptualProperty": "check_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Check": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dq_check_result.bad_rows": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dq_check_result",
+			          "ConceptualProperty": "bad_rows"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Bad rows": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "etl_run_log.started_at": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "etl_run_log",
+			          "ConceptualProperty": "started_at"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Started (UTC)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "etl_run_log.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "etl_run_log",
+			          "ConceptualProperty": "status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "etl_run_log.new_notices": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "etl_run_log",
+			          "ConceptualProperty": "new_notices"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "New notices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "etl_run_log.new_lots": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "etl_run_log",
+			          "ConceptualProperty": "new_lots"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "New lots": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

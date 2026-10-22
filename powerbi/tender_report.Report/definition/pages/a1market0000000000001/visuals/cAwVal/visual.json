@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "cAwVal",
   "position": {
-    "x": 24,
-    "y": 92,
+    "x": 24.418673971980525,
+    "y": 77.907197910604523,
     "z": 2000,
-    "height": 100,
-    "width": 296,
+    "height": 113.95381186924244,
+    "width": 295.34967566109776,
     "tabOrder": 2000
   },
   "visual": {

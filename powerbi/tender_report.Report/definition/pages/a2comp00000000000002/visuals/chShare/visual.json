@@ -28,7 +28,8 @@
               },
               "queryRef": "supplier.supplier_name",
               "nativeQueryRef": "supplier_name",
-              "active": true
+              "active": true,
+              "displayName": "Supplier"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Supplier Share %",
-              "nativeQueryRef": "Supplier Share %"
+              "nativeQueryRef": "Supplier Share %",
+              "displayName": "Share"
             }
           ]
         }
@@ -112,6 +114,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Share of awarded value (known winners)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

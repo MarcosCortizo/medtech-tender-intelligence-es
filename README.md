@@ -18,7 +18,11 @@ Data: Oct 2024 to Oct 2026, 525 notices, 820 real lots after removing repeated n
 | Competitors & pricing | Who wins, with what share, at what price vs the estimate? |
 | Pipeline health | Did the last run work and can we trust the data? |
 
-![Open lots](docs/img/open_lots.png)
+![Open lots](docs/img/Opportunities.png)
+
+| Market & buyers | Competitors & pricing | Pipeline health |
+|---|---|---|
+| ![Market](docs/img/Market.png) | ![Competitors](docs/img/Competitors.png) | ![Health](docs/img/Health.png) |
 
 ## Findings (Oct 2024 - Oct 2026)
 

@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "supplier.supplier_name",
-              "nativeQueryRef": "supplier_name"
+              "nativeQueryRef": "supplier_name",
+              "displayName": "Supplier"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Awarded Lots",
-              "nativeQueryRef": "Awarded Lots"
+              "nativeQueryRef": "Awarded Lots",
+              "displayName": "Lots won"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Awarded Value",
-              "nativeQueryRef": "Awarded Value"
+              "nativeQueryRef": "Awarded Value",
+              "displayName": "Awarded (EUR)"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Supplier Share %",
-              "nativeQueryRef": "Supplier Share %"
+              "nativeQueryRef": "Supplier Share %",
+              "displayName": "Share"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Avg Bids",
-              "nativeQueryRef": "Avg Bids"
+              "nativeQueryRef": "Avg Bids",
+              "displayName": "Avg bids"
             },
             {
               "field": {
@@ -97,7 +102,8 @@
                 }
               },
               "queryRef": "v_lot_latest.Award to Estimate",
-              "nativeQueryRef": "Award to Estimate"
+              "nativeQueryRef": "Award to Estimate",
+              "displayName": "Award / estimate"
             }
           ]
         }

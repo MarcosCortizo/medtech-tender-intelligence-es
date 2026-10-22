@@ -22,7 +22,8 @@
                     "value": "PIPELINE HEALTH",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28pt"
+                      "fontSize": "28pt",
+                      "color": "#1f2a44"
                     }
                   }
                 ]

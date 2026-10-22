@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "dq_check_result.checked_at",
-              "nativeQueryRef": "checked_at"
+              "nativeQueryRef": "checked_at",
+              "displayName": "Checked (UTC)"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "dq_check_result.check_name",
-              "nativeQueryRef": "check_name"
+              "nativeQueryRef": "check_name",
+              "displayName": "Check"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "dq_check_result.bad_rows",
-              "nativeQueryRef": "bad_rows"
+              "nativeQueryRef": "bad_rows",
+              "displayName": "Bad rows"
             }
           ]
         }

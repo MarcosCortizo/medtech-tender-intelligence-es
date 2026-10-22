@@ -22,7 +22,7 @@ Data: Oct 2024 to Oct 2026, 525 notices, 820 real lots after removing repeated n
 
 | Market & buyers | Competitors & pricing | Pipeline health |
 |---|---|---|
-| ![Market](docs/img/Market.png) | ![Competitors](docs/img/Competitors.png) | ![Health](docs/img/Health.png) |
+| ![Market](docs/img/market.png) | ![Competitors](docs/img/competitors.png) | ![Health](docs/img/health.png) |
 
 ## Findings (Oct 2024 - Oct 2026)
 
@@ -73,11 +73,11 @@ Power BI: open `powerbi/tender_report.pbip` (Power BI Project, import mode).
 
 ## Folders
 
-- `src` – Python: extract, transform, load, pipeline
-- `sql` – staging, core tables, loads, data quality, view for Power BI
-- `seeds` – CPV codes in scope and name aliases
-- `powerbi` – report and model as text files (PBIP)
-- `docs` – field map and screenshots
+- `src`: Python for extract, transform, load, pipeline
+- `sql`: staging, core tables, loads, data quality, view for Power BI
+- `seeds`: CPV codes in scope and name aliases
+- `powerbi`: report and model as text files (PBIP)
+- `docs`: field map and screenshots
 
 ## Limits
 
